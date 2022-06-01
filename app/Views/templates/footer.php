@@ -74,14 +74,14 @@
         },
         messages: {
 
-            intitule: "Veuillez saisir une competence"
+            intitule: "Veuillez saisir une compétence"
         }
 
     });
     //End of competence
     $("#secteur_form").validate({
             rules: {
-            intituleSecteur: "required"
+                intituleSecteur: "required"
             },
             messages: {
                 intituleSecteur: "Veuillez saisir un secteur"
@@ -104,11 +104,48 @@
         },
         messages: {
 
-            field_title: "Veillez entrer un domaine"
+            field_title: "Veuillez entrer un domaine"
         }
 
     });
     //end of domaine
+
+     //Fomulaire formatin/cv
+     $("#formationForm").validate({
+        rules: {
+
+            school: {
+                required: true,
+            },
+
+            field: {
+                required: true,
+            },
+
+            studyLevel: {
+                required: true,
+            },
+           
+
+        },
+        messages: {
+            school: {
+                required: "veuillez saisir l'établissement",
+            },
+            field: {
+                required: "veuillez choisir un domaine",
+            },
+
+            studyLevel: {
+                required: "veuillez choisir  le niveau",
+            },
+                    
+         }
+
+        });
+
+
+    //end of formation/cv
 </script>
 
 
@@ -723,6 +760,11 @@
 
     }
 
+    function hideError() {
+        $("#alert").css("display",'none');
+        
+    }
+
     function validateInput() {
         let input = $('#intitule').val();
         let regexName = /^[\w\s-]{3,20}$/;
@@ -1295,9 +1337,10 @@
                 location.reload(); // for reload a page
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                console.log(jqXHR);
-                $("#error_2").text("Les champs Etablissement,Domaine et Niveau d'étude sont obligatoires.🤨 Veuillez-les remplir.");
-                $("#error_2").attr('class', 'col-5 text-danger mt-2 text-center');
+                $("#alert").css("display", "block");
+                $("#error").text("le champ domaine est obligatoire");
+
+              
             }
         });
     }

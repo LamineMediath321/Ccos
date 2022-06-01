@@ -31,9 +31,55 @@ class Formation extends BaseController
       echo json_encode($data);
     }
 
+    // public function add_formation() 
+	// {
+      
+	
+	// 	$data = array(
+	// 		// 'intituleDiplome' => $this->request->getVar('diploma'),
+	// 		'description'  => $this->request->getVar('description'),
+	// 		'dateDebut'  => $this->request->getVar('startDate'),
+	// 		'dateFin'  => $this->request->getVar('endDate'),
+	// 	);
+
+	// 	$school = (new EtablissementModel())->getSchool($this->request->getVar('school'));
+
+	// 	helper('form','url');
+
+	// 	if ($this->request->getMethod() == 'post') {
+	// 		$rules = [
+	// 			'school' => 'required',
+	// 			'studyLevel' => 'required',
+	// 			'field' => 'required',
+
+	// 		];
+	// 		if ($this->validate($rules)) {
+	// 			if (!$school)
+	// 			{
+	// 				$new_school['nom'] = $this->request->getVar('school');
+	// 				$school = (new EtablissementModel())->addSchool($new_school);
+	// 				$data['idEtablissement'] = $school;
+	// 			}
+	// 			else{
+	// 				$data['idEtablissement'] = $school['idEtablissement'];
+	// 			}
+
+	// 			$studyLevel = $this->request->getVar('studyLevel');
+	// 			$field = $this->request->getVar('field');
+	// 			$resume = (new CvModel())->user_cv(session('id'));
+	// 			$this->model->add_formation($data, $field, $resume, $studyLevel);
+	// 		} 
+	// 		else {
+	// 			$data['validation'] = $this->validator;
+	// 			echo json_encode($data);
+	// 		}
+	// 	}
+
+    // }
+
+	
     public function add_formation() 
 	{
-      	helper('form','url');
       
 	
 		$data = array(
@@ -44,45 +90,35 @@ class Formation extends BaseController
 		);
 
 		$school = (new EtablissementModel())->getSchool($this->request->getVar('school'));
-		if ($this->request->getMethod() == 'post') {
-			$rules = [
-				'school' => 'required',
-				'studyLevel' => 'required',
-				'field' => 'required',
 
-			];
-			if ($this->validate($rules)) {
-				if (!$school)
-				{
+		helper('form','url');
+
+			
+		if ($this->request->getMethod() == 'post') {
+			if (!$school)
+			{
 					$new_school['nom'] = $this->request->getVar('school');
 					$school = (new EtablissementModel())->addSchool($new_school);
 					$data['idEtablissement'] = $school;
-				}
-				else{
-					$data['idEtablissement'] = $school['idEtablissement'];
-				}
-
-				$studyLevel = $this->request->getVar('studyLevel');
-				$field = $this->request->getVar('field');
-				$resume = (new CvModel())->user_cv(session('id'));
-				$this->model->add_formation($data, $field, $resume, $studyLevel);
-			} 
-			else {
-				$data['validation'] = $this->validator;
-				echo_json($data);
 			}
+			else
+			{
+					$data['idEtablissement'] = $school['idEtablissement'];
+			}
+
+			$studyLevel = $this->request->getVar('studyLevel');
+			$field = $this->request->getVar('field');
+			$resume = (new CvModel())->user_cv(session('id'));
+			$this->model->add_formation($data, $field, $resume, $studyLevel);
 		}
+			
+		else {
+				$data['validation'] = $this->validator;
+				echo json_encode($data);
+		}
+}
 
-
-		
-		
-		// if ($this->model->add_formation($data, $field, $resume, $studyLevel)){
-		// 	echo json_encode(array("status" => TRUE, "message" => "Formation ajoutée"));
-		// }
-		// else {
-		// 	echo json_encode(array("status" => false, "message" => "Failed"));
-		// }
-    }
+    
 
 	public function edit_formation() 
 	{

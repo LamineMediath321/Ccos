@@ -340,11 +340,22 @@
             </div>
             <form method="post" action="javascript:void(0)" id="formationForm" enctype="multipart/form-data" class="form-horizontal">
                 <div class="modal-body form">
+                    <div class="row ">
+                        <div class=" col-12 align-center">
+                            <div class="form-group">
+                                <div class="alert alert-danger" role="alert" id="alert" style="display:none">
+                                <p id="error"></p>
+
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <label class="bmd-label-floating" for="school">Etablissement</label>
-                                <input type="text" list="schools" class="form-control" name="school" id="school" onchange="hideMessage()">
+                                <input type="text" list="schools" class="form-control" name="school" id="school">
                                 <datalist id="schools">
                                     <?php
                                     foreach ($schools as $school) :
@@ -361,7 +372,7 @@
                                 <label for="studyLevel">Niveau d'étude</label>
                                 <!--input type="text" class="form-control" name="diploma" id="diploma" value="" -->
                                 <select name="studyLevel" class="select2 form-control custom-select" onchange="hideMessage()">
-                                    <option>Choisissez...</option>
+                                    <option value=''>Choisissez...</option>
                                     <?Php foreach ($studyLevels as $studyLevel) :  ?>
                                         <option value="<?= $studyLevel['idNiveauEtude']  ?>"><?= $studyLevel['intitule']  ?></option>
                                     <?php endforeach;  ?>
@@ -371,8 +382,8 @@
                         <div class="col-12 col-sm-6 field">
                             <div class="form-group">
                                 <label for="field">Domaine</label>
-                                <select name="field" class="select2 form-control custom-select" onchange="hideMessage()">
-                                    <option>Choisissez...</option>
+                                <select name="field" class="select2 form-control custom-select" onchange="hideError()">
+                                    <option value=''>Choisissez...</option>
                                     <?Php foreach ($fields as $field) :  ?>
                                         <option value="<?= $field['idDomaine']  ?>"><?= $field['intitule']  ?></option>
                                     <?php endforeach;  ?>
