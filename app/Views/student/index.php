@@ -156,7 +156,7 @@
                                     <table class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
-                                                <td>Nom entreprise</td>
+                                                <td>Nom entrepris</td>
                                                 <td>Intutile offre</td>
                                                 <td>Statut</td>
                                                 <td>Action(s)</td>
