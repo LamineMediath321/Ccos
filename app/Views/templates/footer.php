@@ -144,6 +144,83 @@
 
         });
 
+        /**Concernant l'etudaint */
+    //Pour ses infos perso
+    $("#student_form").validate({
+        rules: {
+
+            adress: {
+                required: true,
+            },
+            sex: "required",
+            bthDay: "required",
+            bthPlace: "required",
+            natnalty: "required",
+            pict: "required",
+            phone: "required",
+            "profiles[]": "required",
+        },
+        messages: {
+            adress: {
+                required: " veuillez saisir une adresse",
+            },
+            sex: "sélectionner votre genre",
+            bthDay: " renseigner votre date de naissance",
+            bthPlace: " renseigner votre lieu de naissance",
+            natnalty: " renseigner votre nationalité",
+            pict: "choisissez une photo de profil",
+            phone: {
+                required: "veuillez saisir votre numero de téléphone",
+                tel: "numéro incorrect"
+            },
+            "profiles[]": "veuillez sélectionner votre profil",
+        }
+    });
+    //end 
+    /**Pour le formulaire d'ajout de formation pour un etudoiant */
+    $("#formationForm").validate({
+        rules: {
+            school: "required",
+            studyLevel: "required",
+            field: "required",
+            startDate: "required",
+            endDate: "required",
+        },
+        messages: {
+            school: "Veillez renseigner l'établissment",
+            studyLevel: "Veillez choisir un niveau d'étude",
+            field: "Veillez choisir un domaine",
+            startDate: "Veillez renseigner la date de début formation",
+            endDate: "Veillez renseigner la date de fin formation",
+        }
+    });
+    /**end forù ajout */
+    /**Ajout de competence pour etudiant */
+    $("#skill_form").validate({
+        rules: {
+            skill: {
+                required: true,
+            },
+        },
+        messages: {
+            skill: "Veillez sélectionner une competence",
+        }
+    });
+    /**End of add skill */
+    /**Ajout de langue dans le cv */
+    $("#language_form").validate({
+        rules: {
+            language: "required",
+            level: "required",
+        },
+        messages: {
+            language: 'Veillez sélectionner une langue qui ne fait partie de votre cv',
+            level: "Veillez sélectionner aussi le niveau",
+        }
+    });
+    /**End of */
+    /**End  */
+
 
     //end of formation/cv
 </script>
@@ -1261,12 +1338,9 @@
                 location.reload(); // for reload a page
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                // $("#error").text('Ce champ est obligatoire');
-                // $("#error").attr('class', 'col-5 text-danger mt-2');
-                // $("#icon").attr('class', 'fa fa-exclamation-circle text-danger mt-2');
-                console.log(data);
-                // alert("il ya des champs manquants!");
-                alert(data);
+                $("#alert").css("display", "block");
+                $("#error").text("le champ profil est obligatoire");
+               
             }
         });
     }
@@ -1442,9 +1516,6 @@
                 location.reload(); // for reload a page
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                // console.log(jqXHR);
-                $("#error").text('Ce champ est obligatoire');
-                $("#error").attr('class', 'col-5 text-danger mt-2 text-center');
             }
         });
     }

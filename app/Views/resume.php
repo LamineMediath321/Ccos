@@ -490,12 +490,14 @@
             </div>
             <form method="post" action="javascript:void(0)" id="skill_form" enctype="multipart/form-data" class="form-horizontal">
                 <div class="modal-body form">
+
+                
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <label for="skill">Compétences</label>
-                                <select name="skill" class="select2 form-control custom-select selectpicker" data-style="btn-success" data-container="select_contain" id="skill" onchange="hideMessage()" onchange="validateInput()">
-                                    <option>Choisissez...</option>
+                                <select name="skill" class="select2 form-control custom-select selectpicker" data-style="btn-success" data-container="select_contain" id="skill" >
+                                    <option value=''>Choisissez...</option>
 
                                     <?Php foreach ($skills as $skill) :  ?>
                                         <option value="<?= $skill['idCompetence']  ?>"><?= $skill['intitule']  ?></option>
@@ -507,9 +509,7 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <p id="error" style="font-style:italic;"></p><i id="icon"></i>
-                </div>
+                
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
@@ -534,8 +534,8 @@
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <label for="language">Langue</label>
-                                <select name="language" class="select2 form-control custom-select" id="language" onchange="hideMessage()">
-                                    <option>Sélectionnez la langue...</option>
+                                <select name="language" class="select2 form-control custom-select" id="language">
+                                    <option value='' >Sélectionnez la langue...</option>
                                     <?Php foreach ($languages as $language) :  ?>
                                         <option value="<?= $language['idLangue']  ?>"><?= $language['intitule'] ?></option>
                                     <?php endforeach;  ?>
@@ -546,7 +546,7 @@
                             <div class="form-group">
                                 <label for="level">Niveau</label>
                                 <select name="level" class="select2 form-control" data-container="select_contain" id="level">
-                                    <option>Sélectionnez votre niveau de comprehension...</option>
+                                    <option value = "">Sélectionnez votre niveau de comprehension...</option>
                                     <option value="Moyen">Moyen</option>
                                     <option value="Assez bien">Assez bien</option>
                                     <option value="Tres bien">Tres bien</option>

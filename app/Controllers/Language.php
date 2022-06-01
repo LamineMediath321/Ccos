@@ -33,10 +33,11 @@ class Language extends BaseController
             if ($this->validate($rules)) {
                 $this->model->add($data);
                 echo json_encode(array("status" => true, "message" => "success"));
-            } else {
-                $data['validation'] = $this->validator;
-                echo json_encode($data);
-            }
+            } 
+        }
+        else {
+            $data['validation'] = $this->validator;
+            echo json_encode($data);
         }
     }
 }

@@ -216,6 +216,16 @@
             </div>
             <form method="post" action="javascript:void(0)" id="student_form" enctype="multipart/form-data" class="">
                 <div class="modal-body form">
+                <!-- <div class="row ">
+                        <div class=" col-12 align-center">
+                            <div class="form-group">
+                                <div class="alert alert-danger" role="alert" id="alert" style="display:none">
+                                <p id="error"></p>
+
+                            </div>
+                            </div>
+                        </div>
+                    </div> -->
                     <div class="row">
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
@@ -250,7 +260,7 @@
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
                                 <label for="profile">Profil</label>
-                                <select name="profiles[]" multiple class="select2 form-control custom-select selectpicker" data-style="btn-success" data-container="select_contain" id="profile">
+                                <select name="profiles[]" multiple class="select2 form-control custom-select selectpicker" data-style="btn-success" data-container="select_contain" id="profile" >
                                     <option>Choisissez...</option>
                                     <?Php foreach ($profiles as $profile) :  ?>
                                         <option value="<?php echo $profile['idProfil']  ?>"><?php echo $profile['intitule']  ?></option>

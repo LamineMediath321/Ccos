@@ -101,9 +101,7 @@ class Cv extends BaseController
 			];
 
 		$resume = $model->addResume($description);
-		// $file = $this->request->getFile('pict');
-		// $name = $file->getRandomName();
-		// $file->move('assets/images', $name);
+		
 		$data = array(
 			'idCV'          =>  $resume,
 			'nom'           =>  $this->request->getVar('lstname'),
