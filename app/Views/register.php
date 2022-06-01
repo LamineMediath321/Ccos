@@ -34,6 +34,7 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-10">
+            <!-- <img class="rounded mx-auto d-block" src="<?php echo base_url('assets/img/Footer.png'); ?>" alt="" width="10%"> -->
             <h1 class="mb-5 text-center" style="color: #3b5998;">Inscription</h1>
 
             <h3 class="mb-4">Plateforme <span> d'Opportunit&eacute;s</span></h3>

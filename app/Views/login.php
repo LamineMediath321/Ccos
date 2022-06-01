@@ -34,6 +34,8 @@
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-7">
+                        <img class="rounded mx-auto d-block" src="<?php echo base_url('assets/img/Footer.png'); ?>" alt="" width="60%">
+
                         <h1 class="mb-5" style="color: #3b5998;">Connexion</h1>
 
                         <h3 class="mb-4">Plateforme <span> d'Opportunit&eacute;s</span></h3>

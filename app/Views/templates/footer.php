@@ -80,21 +80,21 @@
     });
     //End of competence
     $("#secteur_form").validate({
-            rules: {
-                intituleSecteur: "required"
-            },
-            messages: {
-                intituleSecteur: "Veuillez saisir un secteur"
-            }
-        });
-        $("#formtc").validate({
-            rules: {
-                intituleTC: "required"
-            },
-            messages: {
-                intituleTC: "Veuillez saisir un type de contrat"
-            }
-        });
+        rules: {
+            intituleSecteur: "required"
+        },
+        messages: {
+            intituleSecteur: "Veuillez saisir un secteur"
+        }
+    });
+    $("#formtc").validate({
+        rules: {
+            intituleTC: "required"
+        },
+        messages: {
+            intituleTC: "Veuillez saisir un type de contrat"
+        }
+    });
 
     //Fomulaire Domaine
     $("#field_form").validate({
@@ -110,8 +110,8 @@
     });
     //end of domaine
 
-     //Fomulaire formatin/cv
-     $("#formationForm").validate({
+    //Fomulaire formatin/cv
+    $("#formationForm").validate({
         rules: {
 
             school: {
@@ -125,7 +125,7 @@
             studyLevel: {
                 required: true,
             },
-           
+
 
         },
         messages: {
@@ -139,12 +139,12 @@
             studyLevel: {
                 required: "veuillez choisir  le niveau",
             },
-                    
-         }
 
-        });
+        }
 
-        /**Concernant l'etudaint */
+    });
+
+    /**Concernant l'etudaint */
     //Pour ses infos perso
     $("#student_form").validate({
         rules: {
@@ -462,67 +462,67 @@
     // Start of dataTables load function
     $(document).ready(function() {
 
-                // Formulaire inscription 
-                // Affichage de l'input correspondant au profil de l'utilisateur
-                $('[name="profil"]').on('change', function() {
-                    if ($(this).val() == 'etudiant' || $(this).val() == 'alumni') {
-                        // $('.personnel').hide();
-                        $('#code_etudiant').show();
-                    } else {
-                        $('#code_etudiant').hide();
-                        // $('.personnel').show();
-                    }
+        // Formulaire inscription 
+        // Affichage de l'input correspondant au profil de l'utilisateur
+        $('[name="profil"]').on('change', function() {
+            if ($(this).val() == 'etudiant' || $(this).val() == 'alumni') {
+                // $('.personnel').hide();
+                $('#code_etudiant').show();
+            } else {
+                $('#code_etudiant').hide();
+                // $('.personnel').show();
+            }
 
-                });
+        });
 
-                // sidebar nav-item active class add
-                $('.nav .nav-item').click(function() {
-                    // $(this).siblings().className = $(this).siblings().className.replace("nav-item active", "nav-item");
+        // sidebar nav-item active class add
+        $('.nav .nav-item').click(function() {
+            // $(this).siblings().className = $(this).siblings().className.replace("nav-item active", "nav-item");
 
-                    // $('.nav .nav-item').removeClass('active');
-                    $(this).className += " active";
+            // $('.nav .nav-item').removeClass('active');
+            $(this).className += " active";
 
-                });
+        });
 
-                $('#styleOptions').styleSwitcher();
+        $('#styleOptions').styleSwitcher();
 
-                $("#pic").change(function() {
-                    if (this.files || this.files[0]) {
-                        var reader = new FileReader();
-                        reader.onload = function(e) {
-                            $('#pict').attr('src', e.target.result);
-                        }
-                        reader.readAsDataURL(this.files[0]);
-                    }
-                });
+        $("#pic").change(function() {
+            if (this.files || this.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#pict').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
 
-                var editor;
+        var editor;
 
-                ClassicEditor
-                    .create(document.querySelector('#editor'))
-                    .then(newEditor => {
-                        editor = newEditor;
-                        console.log(editor);
-                    })
-                    .catch(error => {
-                        console.error(error);
-                    });
-                editor.editing.view.change(writer => {
-                    writer.setStyle('height', '200px', editor.editing.view.document.getRoot());
-                });
-
-                $('.sidebar .nav-item').click(function() {
-                    $(this).siblings().removeClass('active');
-                    $(this).addClass('active');
-                    console.log(this);
-                });
-
-
-                $('.selectpicker').selectpicker();
-
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .then(newEditor => {
+                editor = newEditor;
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
             });
+        editor.editing.view.change(writer => {
+            writer.setStyle('height', '200px', editor.editing.view.document.getRoot());
+        });
 
-            ////// FIN===================================
+        $('.sidebar .nav-item').click(function() {
+            $(this).siblings().removeClass('active');
+            $(this).addClass('active');
+            console.log(this);
+        });
+
+
+        $('.selectpicker').selectpicker();
+
+    });
+
+    ////// FIN===================================
 </script>
 <script type="text/javascript">
     /*  =========================================================== 
@@ -838,8 +838,8 @@
     }
 
     function hideError() {
-        $("#alert").css("display",'none');
-        
+        $("#alert").css("display", 'none');
+
     }
 
     function validateInput() {
@@ -1340,7 +1340,7 @@
             error: function(jqXHR, textStatus, errorThrown) {
                 $("#alert").css("display", "block");
                 $("#error").text("le champ profil est obligatoire");
-               
+
             }
         });
     }
@@ -1414,7 +1414,7 @@
                 $("#alert").css("display", "block");
                 $("#error").text("le champ domaine est obligatoire");
 
-              
+
             }
         });
     }
@@ -1516,7 +1516,7 @@
                 location.reload(); // for reload a page
             },
             error: function(jqXHR, textStatus, errorThrown) {
-   
+
             }
         });
     }

@@ -3,8 +3,8 @@
     <div class="container">
         <div class="banner-caption">
             <div class="col-md-12 col-sm-12 banner-text">
-                <h2>La plateforme d'accompagnement des &eacute;tudiants de
-                    l'Universit&eacute; Gaston Berger dans leur insertion professionnelle</h2>
+                <h3>La plateforme d'accompagnement des &eacute;tudiants de
+                    l'Universit&eacute; Gaston Berger dans leur insertion professionnelle</h3>
 
                 <form id="formSearchOffer" class="form-horizontal" method="post" action="<?php echo base_url() ?>/Offre/recherche" enctype="multipart/form-data">
                     <div class="col-md-offset-1 col-md-3 col-sm-3 col-xs-12 no-padd">
@@ -130,7 +130,7 @@
 </div> -->
 
 <section>
-    <div class="container">
+    <div class="container center-block">
         <div class="row">
             <div class="main-heading">
                 <p><?= $offersCount ?> Offres</p>
@@ -142,7 +142,7 @@
             <?php if ($offers) :
                 foreach ($offers as $offer) :
             ?>
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-md-4 col-sm-6">
                         <div class="grid-view brows-job-list">
                             <div class="brows-job-company-img">
                                 <img src="<?php echo base_url('assets/images/' . $offer['logo']); ?>" class="img-responsive" alt="" />
@@ -182,7 +182,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 col-sm-12">
-                <div class="text-center"><a href="<?php echo base_url(); ?>/offres" class="btn btn-primary">Voir plus</a></div>
+                <div class="text-center"><a href="<?php echo base_url(); ?>/offres" class="btn btn-secondary">Voir plus</a></div>
             </div>
         </div>
     </div>
@@ -194,50 +194,104 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <main class="col-6">
 
-    <div class="container">
+    <!-- <div class="container">
         <h3 class="card-title text-center alert alert-info">Les étapes pour candidater à une offre</h3>
         <div class="row">
             <div class="col-md-12">
                 <div class="main-timeline4">
                     <div class="timeline">
                         <span class="timeline-icon"></span>
-                        <span class="year">Etape 1</span>
+                        <span class="etape">Etape 1</span>
                         <div class="timeline-content">
-                            <h3 class="title">Activer ton compte institutionnel</h3>
+                            <h3 class="title">Activer votre compte institutionnel</h3>
                             <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis justo id pulvinar suscipit. Pellentesque rutrum vehicula erat sed dictum. Integer quis turpis magna. Suspendisse tincidunt elit at erat tincidunt, vel vulputate arcu dapibus. Etiam accumsan ornare posuere. Nullam est.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis justo id pulvinar suscipit. Pellentesque rutrum vehicula erat sed dictum. Integer quis turpis magna.
                             </p>
                         </div>
                     </div>
                     <div class="timeline">
                         <span class="timeline-icon"></span>
-                        <span class="year">Etape 2</span>
+                        <span class="etape">Etape 2</span>
                         <div class="timeline-content">
                             <h3 class="title">Se connecter sur la plateforme</h3>
                             <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis justo id pulvinar suscipit. Pellentesque rutrum vehicula erat sed dictum. Integer quis turpis magna. Suspendisse tincidunt elit at erat tincidunt, vel vulputate arcu dapibus. Etiam accumsan ornare posuere. Nullam est.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis justo id pulvinar suscipit. Pellentesque rutrum vehicula erat sed dictum.
                             </p>
                         </div>
                     </div>
                     <div class="timeline">
                         <span class="timeline-icon"></span>
-                        <span class="year">Etape 3</span>
+                        <span class="etape">Etape 3</span>
                         <div class="timeline-content">
                             <h3 class="title">Remplir les informations suplementaires & creer votre cv</h3>
                             <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis justo id pulvinar suscipit. Pellentesque rutrum vehicula erat sed dictum. Integer quis turpis magna. Suspendisse tincidunt elit at erat tincidunt, vel vulputate arcu dapibus. Etiam accumsan ornare posuere. Nullam est.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis justo id pulvinar suscipit.
                             </p>
                         </div>
                     </div>
                     <div class="timeline">
                         <span class="timeline-icon"></span>
-                        <span class="year">Etape 4</span>
+                        <span class="etape">Etape 4</span>
                         <div class="timeline-content">
                             <h3 class="title">Postuler & suiver une opportinuté</h3>
                             <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis justo id pulvinar suscipit. Pellentesque rutrum vehicula erat sed dictum. Integer quis turpis magna. Suspendisse tincidunt elit at erat tincidunt, vel vulputate arcu dapibus. Etiam accumsan ornare posuere. Nullam est.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis justo id pulvinar suscipit. Pellentesque rutrum vehicula erat sed dictum.
                             </p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="container">
+        <h3 class="card-title text-center alert alert-info">Les étapes pour candidater à une offre</h3>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="main-timeline2">
+                    <div class="timeline">
+                        <a href="#" class="timeline-content">
+                            <span class="etape">Etape 1</span>
+                            <div class="inner-content">
+                                <h3 class="title">Activer votre compte institutionnel</h3>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ex odio,
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="timeline">
+                        <a href="<?php echo base_url(); ?>/connexion" class="timeline-content">
+                            <span class="etape">Etape 2</span>
+                            <div class="inner-content">
+                                <h3 class="title">Se connecter sur la plateforme</h3>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ex odio, rhoncus sit amet tincidunt eu,
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="timeline">
+                        <a href="#" class="timeline-content">
+                            <span class="etape">Etape 3</span>
+                            <div class="inner-content">
+                                <h3 class="title">Remplir les informations suplementaires & creer votre cv</h3>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ex odio, rhoncus sit amet tincidunt eu,
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="timeline">
+                        <a href="#" class="timeline-content">
+                            <span class="etape">Etape 4</span>
+                            <div class="inner-content">
+                                <h3 class="title">Postuler & suiver une opportinuté</h3>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ex odio, rhoncus sit amet tincidunt eu, suscipit a orci.
+                                </p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -357,211 +411,306 @@
     /*timeline4*/
 
 
-    /******************* Timeline Demo - 8 *****************/
+    /*timeline2*/
 
-    .main-timeline4 {
+
+    /******************* Timeline Demo - 4 *****************/
+
+    .main-timeline2 {
         overflow: hidden;
         position: relative
     }
 
-    .main-timeline4:after,
-    .main-timeline4:before {
+    .main-timeline2:before {
         content: "";
-        display: block;
-        width: 100%;
-        clear: both
-    }
-
-    .main-timeline4:before {
-        content: "";
-        width: 3px;
-        height: 100%;
-        background: #d6d5d5;
+        width: 5px;
+        height: 70%;
+        background: #333;
         position: absolute;
-        top: 30px;
-        left: 50%
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%)
     }
 
-    .main-timeline4 .timeline {
+    .main-timeline2 .timeline-content:before,
+    .main-timeline2 .timeline:before {
+        top: 50%;
+        transform: translateY(-50%);
+        content: ""
+    }
+
+    .main-timeline2 .timeline {
         width: 50%;
-        float: left;
-        padding-right: 30px;
+        padding-left: 100px;
+        float: right;
         position: relative
     }
 
-    .main-timeline4 .timeline-icon {
-        width: 32px;
-        height: 32px;
+    .main-timeline2 .timeline:before {
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
         background: #fff;
-        border: 3px solid #fe6847;
+        border: 5px solid #333;
         position: absolute;
-        top: 5.5%;
-        right: -17.5px
+        left: -10px
     }
 
-    .main-timeline4 .year {
+    .main-timeline2 .timeline-content {
         display: block;
-        padding: 10px;
-        margin: 0;
-        font-size: 30px;
-        color: #fff;
-        border-radius: 0 50px 50px 0;
-        background: #fe6847;
-        text-align: center;
+        padding-left: 150px;
         position: relative
     }
 
-    .main-timeline4 .year:before {
-        content: "";
-        border-top: 35px solid #f59c8b;
-        border-left: 35px solid transparent;
+    .main-timeline2 .timeline-content:before {
+        width: 90px;
+        height: 10px;
+        border-top: 7px dotted #333;
         position: absolute;
-        bottom: -35px;
+        left: -92px
+    }
+
+    .main-timeline2 .etape {
+        display: inline-block;
+        width: 130px;
+        height: 120px;
+        line-height: 100px;
+        border-radius: 50%;
+        border: 10px solid #f54957;
+        font-size: 30px;
+        color: #f54957;
+        text-align: center;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, .4);
+        position: absolute;
+        top: 0;
         left: 0
     }
 
-    .main-timeline4 .timeline-content {
-        padding: 30px 20px;
-        margin: 0 45px 0 35px;
-        background: #f2f2f2
+    .main-timeline2 .etape:before {
+        content: "";
+        border-left: 20px solid #f54957;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        position: absolute;
+        bottom: -13px;
+        right: 0;
+        transform: rotate(45deg)
     }
 
-    .main-timeline4 .title {
-        font-size: 19px;
-        font-weight: 700;
-        color: #504f54;
-        margin: 0 0 10px
+    .main-timeline2 .inner-content {
+        padding: 20px 0
     }
 
-    .main-timeline4 .description {
+    .main-timeline2 .title {
+        font-size: 20px;
+        color: #f54957;
+        text-transform: uppercase;
+        margin: 0 0 5px
+    }
+
+    .main-timeline2 .description {
         font-size: 14px;
-        color: #7d7b7b;
-        margin: 0
+        color: #6f6f6f;
+        margin: 0 0 5px
     }
 
-    .main-timeline4 .timeline:nth-child(2n) {
-        padding: 0 0 0 30px
+    .main-timeline2 .timeline:nth-child(2n) {
+        padding: 0 100px 0 0
     }
 
-    .main-timeline4 .timeline:nth-child(2n) .timeline-icon {
-        right: auto;
-        left: -14.5px
-    }
-
-    .main-timeline4 .timeline:nth-child(2n) .year {
-        border-radius: 50px 0 0 50px;
-        background: #7eda99
-    }
-
-    .main-timeline4 .timeline:nth-child(2n) .year:before {
-        border-left: none;
-        border-right: 35px solid transparent;
+    .main-timeline2 .timeline:nth-child(2n) .timeline-content:before,
+    .main-timeline2 .timeline:nth-child(2n) .etape,
+    .main-timeline2 .timeline:nth-child(2n):before {
         left: auto;
+        right: -10px
+    }
+
+    .main-timeline2 .timeline:nth-child(2n) .timeline-content {
+        padding: 0 150px 0 0
+    }
+
+    .main-timeline2 .timeline:nth-child(2n) .timeline-content:before {
+        right: -92px
+    }
+
+    .main-timeline2 .timeline:nth-child(2n) .etape {
         right: 0
     }
 
-    .main-timeline4 .timeline:nth-child(2n) .timeline-content {
-        text-align: right;
-        margin: 0 35px 0 45px
+    .main-timeline2 .timeline:nth-child(2n) .etape:before {
+        right: auto;
+        left: 0;
+        border-left: none;
+        border-right: 20px solid #f54957;
+        transform: rotate(-45deg)
     }
 
-    .main-timeline4 .timeline:nth-child(2) {
-        margin-top: 170px
+    .main-timeline2 .timeline:nth-child(2) {
+        margin-top: 110px
     }
 
-    .main-timeline4 .timeline:nth-child(odd) {
-        margin: -175px 0 0
+    .main-timeline2 .timeline:nth-child(odd) {
+        margin: -110px 0 0
     }
 
-    .main-timeline4 .timeline:nth-child(even) {
+    .main-timeline2 .timeline:nth-child(even) {
         margin-bottom: 80px
     }
 
-    .main-timeline4 .timeline:first-child,
-    .main-timeline4 .timeline:last-child:nth-child(even) {
+    .main-timeline2 .timeline:first-child,
+    .main-timeline2 .timeline:last-child:nth-child(even) {
         margin: 0
     }
 
-    .main-timeline4 .timeline:nth-child(2n) .timeline-icon {
-        border-color: #7eda99
+    .main-timeline2 .timeline:nth-child(2n) .etape {
+        border-color: #1ebad0;
+        color: #1ebad0
     }
 
-    .main-timeline4 .timeline:nth-child(2n) .year:before {
-        border-top-color: #92efad
+    .main-timeline2 .timeline:nth-child(2) .etape:before {
+        border-right-color: #1ebad0
     }
 
-    .main-timeline4 .timeline:nth-child(3n) .timeline-icon {
-        border-color: #8a5ec1
+    .main-timeline2 .timeline:nth-child(2n) .title {
+        color: #1ebad0
     }
 
-    .main-timeline4 .timeline:nth-child(3n) .year {
-        background: #8a5ec1
+    .main-timeline2 .timeline:nth-child(3n) .etape {
+        border-color: #7cba01;
+        color: #7cba01
     }
 
-    .main-timeline4 .timeline:nth-child(3n) .year:before {
-        border-top-color: #a381cf
+    .main-timeline2 .timeline:nth-child(3) .etape:before {
+        border-left-color: #7cba01
     }
 
-    .main-timeline4 .timeline:nth-child(4n) .timeline-icon {
-        border-color: #f98d9c
+    .main-timeline2 .timeline:nth-child(3n) .title {
+        color: #7cba01
     }
 
-    .main-timeline4 .timeline:nth-child(4n) .year {
-        background: #f98d9c
+    .main-timeline2 .timeline:nth-child(4n) .etape {
+        border-color: #f8781f;
+        color: #f8781f
     }
 
-    .main-timeline4 .timeline:nth-child(4n) .year:before {
-        border-top-color: #f2aab3
+    .main-timeline2 .timeline:nth-child(4) .etape:before {
+        border-right-color: #f8781f
+    }
+
+    .main-timeline2 .timeline:nth-child(4n) .title {
+        color: #f8781f
+    }
+
+    @media only screen and (max-width:1200px) {
+        .main-timeline2 .etape {
+            top: 50%;
+            transform: translateY(-50%)
+        }
+    }
+
+    @media only screen and (max-width:990px) {
+        .main-timeline2 .timeline {
+            padding-left: 75px
+        }
+
+        .main-timeline2 .timeline:nth-child(2n) {
+            padding: 0 75px 0 0
+        }
+
+        .main-timeline2 .timeline-content {
+            padding-left: 130px
+        }
+
+        .main-timeline2 .timeline:nth-child(2n) .timeline-content {
+            padding: 0 130px 0 0
+        }
+
+        .main-timeline2 .timeline-content:before {
+            width: 68px;
+            left: -68px
+        }
+
+        .main-timeline2 .timeline:nth-child(2n) .timeline-content:before {
+            right: -68px
+        }
     }
 
     @media only screen and (max-width:767px) {
-        .main-timeline4 {
+        .main-timeline2 {
             overflow: visible
         }
 
-        .main-timeline4:before {
+        .main-timeline2:before {
+            height: 100%;
             top: 0;
-            left: 0
+            left: 0;
+            transform: translateX(0)
         }
 
-        .main-timeline4 .timeline:nth-child(2),
-        .main-timeline4 .timeline:nth-child(even),
-        .main-timeline4 .timeline:nth-child(odd) {
-            margin: 0
+        .main-timeline2 .timeline:before,
+        .main-timeline2 .timeline:nth-child(2n):before {
+            top: 60px;
+            left: -9px;
+            transform: translateX(0)
         }
 
-        .main-timeline4 .timeline {
+        .main-timeline2 .timeline,
+        .main-timeline2 .timeline:nth-child(even),
+        .main-timeline2 .timeline:nth-child(odd) {
             width: 100%;
             float: none;
-            padding: 0 0 0 30px;
-            margin-bottom: 20px !important
+            text-align: center;
+            padding: 0;
+            margin: 0 0 10px
         }
 
-        .main-timeline4 .timeline:last-child {
-            margin: 0 !important
+        .main-timeline2 .timeline-content,
+        .main-timeline2 .timeline:nth-child(2n) .timeline-content {
+            padding: 0
         }
 
-        .main-timeline4 .timeline-icon {
+        .main-timeline2 .timeline-content:before,
+        .main-timeline2 .timeline:nth-child(2n) .timeline-content:before {
+            display: none
+        }
+
+        .main-timeline2 .timeline:nth-child(2n) .etape,
+        .main-timeline2 .etape {
+            position: relative;
+            transform: translateY(0)
+        }
+
+        .main-timeline2 .timeline:nth-child(2n) .etape:before,
+        .main-timeline2 .etape:before {
+            border: none;
+            border-right: 20px solid #f54957;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            top: 50%;
+            left: -23px;
+            bottom: auto;
             right: auto;
-            left: -14.5px
+            transform: rotate(0)
         }
 
-        .main-timeline4 .year {
-            border-radius: 50px 0 0 50px
+        .main-timeline2 .timeline:nth-child(2n) .etape:before {
+            border-right-color: #1ebad0
         }
 
-        .main-timeline4 .year:before {
-            border-left: none;
-            border-right: 35px solid transparent;
-            left: auto;
-            right: 0
+        .main-timeline2 .timeline:nth-child(3n) .etape:before {
+            border-right-color: #7cba01
         }
 
-        .main-timeline4 .timeline-content {
-            margin: 0 35px 0 45px
+        .main-timeline2 .timeline:nth-child(4n) .etape:before {
+            border-right-color: #f8781f
+        }
+
+        .main-timeline2 .inner-content {
+            padding: 10px
         }
     }
+
+
 
 
     /*end timeline*/
@@ -572,8 +721,8 @@
     /* carousel */
 
     #testimonial {
-        margin-top: 50px;
-        margin-bottom: 50px;
+        /* margin-top: 50px; */
+        /* margin-bottom: 50px; */
         background-color: none;
 
     }
@@ -589,7 +738,6 @@
         color: #222;
         font-size: 2.3em;
         text-shadow: none;
-        margin-top: 30px;
     }
 
     /* Previous button  */

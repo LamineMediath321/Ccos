@@ -1,21 +1,23 @@
-<?php namespace App\Controllers;
+<?php
+
+namespace App\Controllers;
 
 use App\Models\CvModel;
 use App\Models\EntrepriseModel;
 use App\Models\EtablissementModel;
-use App\Models\FormationModel;   
+use App\Models\FormationModel;
 
 class Formation extends BaseController
 {
-    public function __construct()
-    {
-        $this->model = new FormationModel();
-    }
-	
+	public function __construct()
+	{
+		$this->model = new FormationModel();
+	}
+
 	public function formations()
 	{
 		$data = [];
-	
+
 		$data['formations']	= 	$this->model->getFormationsList();
 		$data['ville'] 		= 	$this->model->getCities();
 		$data['etab'] 		= 	$this->model->getEtablissements();
@@ -23,65 +25,18 @@ class Formation extends BaseController
 
 		$this->charger('formations/listeFormation', $data);
 	}
-	
-	public function ajax_get_formation($id) 
-    {
-      $data = $this->model->get_by_id($id);
-   
-      echo json_encode($data);
-    }
 
-    // public function add_formation() 
-	// {
-      
-	
-	// 	$data = array(
-	// 		// 'intituleDiplome' => $this->request->getVar('diploma'),
-	// 		'description'  => $this->request->getVar('description'),
-	// 		'dateDebut'  => $this->request->getVar('startDate'),
-	// 		'dateFin'  => $this->request->getVar('endDate'),
-	// 	);
-
-	// 	$school = (new EtablissementModel())->getSchool($this->request->getVar('school'));
-
-	// 	helper('form','url');
-
-	// 	if ($this->request->getMethod() == 'post') {
-	// 		$rules = [
-	// 			'school' => 'required',
-	// 			'studyLevel' => 'required',
-	// 			'field' => 'required',
-
-	// 		];
-	// 		if ($this->validate($rules)) {
-	// 			if (!$school)
-	// 			{
-	// 				$new_school['nom'] = $this->request->getVar('school');
-	// 				$school = (new EtablissementModel())->addSchool($new_school);
-	// 				$data['idEtablissement'] = $school;
-	// 			}
-	// 			else{
-	// 				$data['idEtablissement'] = $school['idEtablissement'];
-	// 			}
-
-	// 			$studyLevel = $this->request->getVar('studyLevel');
-	// 			$field = $this->request->getVar('field');
-	// 			$resume = (new CvModel())->user_cv(session('id'));
-	// 			$this->model->add_formation($data, $field, $resume, $studyLevel);
-	// 		} 
-	// 		else {
-	// 			$data['validation'] = $this->validator;
-	// 			echo json_encode($data);
-	// 		}
-	// 	}
-
-    // }
-
-	
-    public function add_formation() 
+	public function ajax_get_formation($id)
 	{
-      
-	
+		$data = $this->model->get_by_id($id);
+
+		echo json_encode($data);
+	}
+
+	public function add_formation()
+	{
+
+
 		$data = array(
 			// 'intituleDiplome' => $this->request->getVar('diploma'),
 			'description'  => $this->request->getVar('description'),
@@ -91,40 +46,78 @@ class Formation extends BaseController
 
 		$school = (new EtablissementModel())->getSchool($this->request->getVar('school'));
 
-		helper('form','url');
+		helper('form', 'url');
 
-			
 		if ($this->request->getMethod() == 'post') {
-			if (!$school)
-			{
+			$rules = [
+				'school' => 'required',
+				'studyLevel' => 'required',
+				'field' => 'required',
+
+			];
+			if ($this->validate($rules)) {
+				if (!$school) {
 					$new_school['nom'] = $this->request->getVar('school');
 					$school = (new EtablissementModel())->addSchool($new_school);
 					$data['idEtablissement'] = $school;
-			}
-			else
-			{
+				} else {
 					$data['idEtablissement'] = $school['idEtablissement'];
+				}
+
+				$studyLevel = $this->request->getVar('studyLevel');
+				$field = $this->request->getVar('field');
+				$resume = (new CvModel())->user_cv(session('id'));
+				$this->model->add_formation($data, $field, $resume, $studyLevel);
+			} else {
+				$data['validation'] = $this->validator;
+				echo json_encode($data);
+			}
+		}
+	}
+
+
+	public function add_formation()
+	{
+
+
+		$data = array(
+			// 'intituleDiplome' => $this->request->getVar('diploma'),
+			'description'  => $this->request->getVar('description'),
+			'dateDebut'  => $this->request->getVar('startDate'),
+			'dateFin'  => $this->request->getVar('endDate'),
+		);
+
+		$school = (new EtablissementModel())->getSchool($this->request->getVar('school'));
+
+		helper('form', 'url');
+
+
+		if ($this->request->getMethod() == 'post') {
+			if (!$school) {
+				$new_school['nom'] = $this->request->getVar('school');
+				$school = (new EtablissementModel())->addSchool($new_school);
+				$data['idEtablissement'] = $school;
+			} else {
+				$data['idEtablissement'] = $school['idEtablissement'];
 			}
 
 			$studyLevel = $this->request->getVar('studyLevel');
 			$field = $this->request->getVar('field');
 			$resume = (new CvModel())->user_cv(session('id'));
 			$this->model->add_formation($data, $field, $resume, $studyLevel);
+		} else {
+			$data['validation'] = $this->validator;
+			echo json_encode($data);
 		}
-			
-		else {
-				$data['validation'] = $this->validator;
-				echo json_encode($data);
-		}
-}
+	}
 
-    
 
-	public function edit_formation() 
+
+	public function edit_formation()
 	{
-		helper('form','url');
-		
-	
+		helper('form', 'url');
+
+
 		$data = array(
 			// 'intituleDiplome' => $this->request->getVar('diploma'),
 			'description'  => $this->request->getVar('description'),
@@ -134,51 +127,42 @@ class Formation extends BaseController
 
 		$school = (new EtablissementModel())->getSchool($this->request->getVar('school'));
 
-		if (!$school)
-		{
+		if (!$school) {
 			$new_school['nom'] = $this->request->getVar('school');
 			$school = (new EtablissementModel())->addSchool($new_school);
 			$data['idEtablissement'] = $school;
-		}
-		else
+		} else
 			$data['idEtablissement'] = $school['idEtablissement'];
 
 		$studyLevel = $this->request->getVar('studyLevel');
 		$field = $this->request->getVar('field');
-		
-		if ($this->model->edit_formation(array('idFormation' => $this->request->getVar('idForm')), $data, $field, $studyLevel)){
+
+		if ($this->model->edit_formation(array('idFormation' => $this->request->getVar('idForm')), $data, $field, $studyLevel)) {
 			echo json_encode(array("status" => TRUE, "message" => "Formation modifiée"));
-		}
-		else {
+		} else {
 			echo json_encode(array("status" => false, "message" => "Failed"));
 		}
 	}
-        
+
 	//methode permettant de supprimer une formation
-	public function delete_formation($id) 
+	public function delete_formation($id)
 	{
-		helper(['form','url']);
-		
+		helper(['form', 'url']);
+
 		$this->model->delete_formation($id);
 		echo json_encode(array("status" => TRUE));
 	}
-    
+
 	public function getCityFormationsNCompanies($ville)
 	{
 		$data = [];
 
 		$data[] = [
-			'ville' => $ville, 
+			'ville' => $ville,
 			'formations' =>		$this->model->getVilleFormations($ville),
-			'entreprises' =>	(new EntrepriseModel())->getVilleEntreprises($ville),
+			'entreprises' => (new EntrepriseModel())->getVilleEntreprises($ville),
 		];
-		
+
 		return json_encode($data);
 	}
-   
-
-     
 }
-
-    
-    
