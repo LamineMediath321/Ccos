@@ -143,6 +143,17 @@
         }
 
     });
+    //Fomulaire experience/cv
+    $("#experience_form").validate({
+        rules: {
+            jobTitle: "required",
+            company: "required",
+        },
+        messages: {
+            jobTitle: "Renseigner l'intitulé du poste",
+            company: "Renseigner le nom de l'établissment",
+        }
+    });
 
     /**Concernant l'etudaint */
     //Pour ses infos perso
@@ -1423,7 +1434,7 @@
     function add_experience() {
         save_method = 'add';
         $('#experience_form')[0].reset(); // reset form on modals
-        $('#add_experience').modal('show'); // show bootstrap modal
+        $('#experience_modal').modal('show'); // show bootstrap modal
     }
 
     function update_experience(id) {
@@ -1465,7 +1476,7 @@
             url = "";
         }
 
-        document.getElementById('realisation').value = editor.getData();
+        // document.getElementById('realisation').value = editor.getData();
 
         // ajax adding data to database
         $.ajax({
@@ -1482,7 +1493,8 @@
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR);
-                alert('Une erreur est survenue');
+                alert('dssd');
+
             }
         });
 

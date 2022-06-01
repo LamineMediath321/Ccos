@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-md-2 col-sm-offset-1 col-sm-2 col-xs-12 m-5 no-padd">
                     <div class="input-group">
-                        <button type="submit" class="btn btn-primary" id="searchCriteria">Chercher</button>
+                        <button type="submit" class="btn btn-secondary" id="searchCriteria">Chercher</button>
                     </div>
                 </div>
             </form>

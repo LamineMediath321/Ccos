@@ -1,4 +1,6 @@
-<?php namespace App\Controllers;
+<?php
+
+namespace App\Controllers;
 
 use App\Models\CvModel;
 use App\Models\ExperienceModel;
@@ -19,7 +21,7 @@ class Experience extends BaseController
     protected function getExperienceFormData()
     {
         $data = [
-            'idCV'          =>  (new CvModel())->user_cv(session('id')),
+            'idCV'          => (new CvModel())->user_cv(session('id')),
             'intitulePoste' =>  $this->request->getVar('jobTitle'),
             'employeur'     =>  $this->request->getVar('company'),
             'dateDebut'     =>  $this->request->getVar('startDate'),
@@ -33,25 +35,28 @@ class Experience extends BaseController
     public function add()
     {
         $data = $this->getExperienceFormData();
-        
-        if ($this->model->add($data)){
-            echo json_encode(array("status" => TRUE, "message" => "Experience ajoutée"));
-        }
-        else {
-        echo json_encode(array("status" => false, "message" => "Failed"));
+
+        $rules = [
+            'jobTitle' => 'required',
+            'company' => 'required',
+        ];
+
+        if ($this->validate($rules)) {
+            $this->model->add($data);
+        } else {
+            echo_json($data);
         }
     }
 
     public function update_experience()
     {
-        helper(['form','url']);
-        
+        helper(['form', 'url']);
+
         $data = $this->getExperienceFormData();
 
         if ($this->model->update_experience(array('idExperience' => $this->request->getVar('idExp')), $data))
             echo json_encode(array("status" => TRUE, "message" => "Experience modifiée"));
-        else 
+        else
             echo json_encode(array("status" => false, "message" => "Failed to update"));
     }
-
 }

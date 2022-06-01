@@ -11,62 +11,62 @@
 <section class="detail-desc ">
     <div class="">
         <div class="row ">
-            
-       
+
+
             <?php if (!$resume) : ?>
-            <div class="row no-padd mrg-0">
-                <div class="detail pannel-footer">
-                    <div class="col-md-7 col-sm-7 padd-15">
-                        <p> <i class="fa fa-warning"></i> Veuillez completer vos informations pour pouvoir editer votre cv</p>
-                    </div>
-                    <div class="col-md-5 col-sm-5">
-                        <div class="detail-pannel-footer-btn pull-right">
-                        <a href="<?php echo base_url(); ?>/dashboard" class="footer-btn grn-btn" title="hdjhd" >
-                            Completer mes informations</a>
+                <div class="row no-padd mrg-0">
+                    <div class="detail pannel-footer">
+                        <div class="col-md-7 col-sm-7 padd-15">
+                            <p> <i class="fa fa-warning"></i> Veuillez completer vos informations pour pouvoir editer votre cv</p>
+                        </div>
+                        <div class="col-md-5 col-sm-5">
+                            <div class="detail-pannel-footer-btn pull-right">
+                                <a href="<?php echo base_url(); ?>/dashboard" class="footer-btn grn-btn" title="hdjhd">
+                                    Completer mes informations</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-    </div>
-<?php endif; ?>
+        </div>
+    <?php endif; ?>
 </section>
 <!-- Resume Detail End -->
 
 <?php if ($resume) : ?>
     <section class="detail-desc">
-    <div class="container white-shadow">
-        <div class="row ">
-            <div class="detail-pic">
-                <img src="<?= $resume ? base_url() . '/assets/images/' . $persinfo['photo'] : base_url() . '/assets/images/avatar.png' ?>" width="133" height="133" alt="photo de profil">
+        <div class="container white-shadow">
+            <div class="row ">
+                <div class="detail-pic">
+                    <img src="<?= $resume ? base_url() . '/assets/images/' . $persinfo['photo'] : base_url() . '/assets/images/avatar.png' ?>" width="133" height="133" alt="photo de profil">
+                </div>
             </div>
-        </div>
-        <div class="row bottom-mrg mrg-0">
-            <div class="col-md-8 col-sm-8">
-                <div class="detail-desc-caption">
-                    <h4> <?= ucfirst($persinfo['prenom']) . ' ' . strtoupper($persinfo['nom']) ?></h4>
-                    <span class="designation">
-                        <?= $resume && $persinfo['profils'] ? $persinfo['profils'] : '' ?>
-                    </span>
-                    <p>
-                        <?= $resume ? $persinfo['description'] : '' ?>
-                    </p>
+            <div class="row bottom-mrg mrg-0">
+                <div class="col-md-8 col-sm-8">
+                    <div class="detail-desc-caption">
+                        <h4> <?= ucfirst($persinfo['prenom']) . ' ' . strtoupper($persinfo['nom']) ?></h4>
+                        <span class="designation">
+                            <?= $resume && $persinfo['profils'] ? $persinfo['profils'] : '' ?>
+                        </span>
+                        <p>
+                            <?= $resume ? $persinfo['description'] : '' ?>
+                        </p>
 
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="get-touch">
-                    <h4>Coordonn&eacute;es</h4>
-                    <ul>
-                        <li><i class="fa fa-map-marker"></i><span><?= $resume ? $persinfo['adresse'] : ' - - - ' ?></span></li>
-                        <li><i class="fa fa-envelope"></i><span><?= $resume ? $persinfo['email'] : ' - - - ' ?></span></li>
-                        <li><i class="fa fa-phone"></i><span><?= $resume ? $persinfo['telephone'] : ' - - - ' ?></span></li>
-                    </ul>
+                <div class="col-md-4 col-sm-4">
+                    <div class="get-touch">
+                        <h4>Coordonn&eacute;es</h4>
+                        <ul>
+                            <li><i class="fa fa-map-marker"></i><span><?= $resume ? $persinfo['adresse'] : ' - - - ' ?></span></li>
+                            <li><i class="fa fa-envelope"></i><span><?= $resume ? $persinfo['email'] : ' - - - ' ?></span></li>
+                            <li><i class="fa fa-phone"></i><span><?= $resume ? $persinfo['telephone'] : ' - - - ' ?></span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- Resume Detail End -->
+    </section>
+    <!-- Resume Detail End -->
 
     <section class="full-detail-description full-detail resume-detail">
         <div class="container">
@@ -344,9 +344,9 @@
                         <div class=" col-12 align-center">
                             <div class="form-group">
                                 <div class="alert alert-danger" role="alert" id="alert" style="display:none">
-                                <p id="error"></p>
+                                    <p id="error"></p>
 
-                            </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -434,6 +434,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <form method="post" action="javascript:void(0)" id="experience_form" enctype="multipart/form-data" class="form-horizontal">
+                <!-- <div id="editor" style="height: 10px;"></div> -->
                 <div class="modal-body form">
                     <div class="row">
                         <div class="col-12 col-sm-6">
@@ -463,7 +464,6 @@
                         <div class="col-12 col-sm-10">
                             <div class="form-group">
                                 <label class="" for="realisation">Réalisation</label>
-                                <div id="editor" style="height: 200px;"></div>
                                 <textarea class="form-control hidden" name="realisation" id="realisation" minlength="10" maxlength="1300" rows="4" placeholder=""> </textarea>
 
                             </div>
@@ -491,12 +491,12 @@
             <form method="post" action="javascript:void(0)" id="skill_form" enctype="multipart/form-data" class="form-horizontal">
                 <div class="modal-body form">
 
-                
+
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
                                 <label for="skill">Compétences</label>
-                                <select name="skill" class="select2 form-control custom-select selectpicker" data-style="btn-success" data-container="select_contain" id="skill" >
+                                <select name="skill" class="select2 form-control custom-select selectpicker" data-style="btn-success" data-container="select_contain" id="skill">
                                     <option value="">Choisissez...</option>
 
                                     <?Php foreach ($skills as $skill) :  ?>
@@ -509,7 +509,7 @@
                     </div>
                 </div>
 
-                
+
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
@@ -535,7 +535,7 @@
                             <div class="form-group">
                                 <label for="language">Langue</label>
                                 <select name="language" class="select2 form-control custom-select" id="language">
-                                    <option value='' >Sélectionnez la langue...</option>
+                                    <option value=''>Sélectionnez la langue...</option>
                                     <?Php foreach ($languages as $language) :  ?>
                                         <option value="<?= $language['idLangue']  ?>"><?= $language['intitule'] ?></option>
                                     <?php endforeach;  ?>
@@ -546,7 +546,7 @@
                             <div class="form-group">
                                 <label for="level">Niveau</label>
                                 <select name="level" class="select2 form-control" data-container="select_contain" id="level">
-                                    <option value = "">Sélectionnez votre niveau de comprehension...</option>
+                                    <option value="">Sélectionnez votre niveau de comprehension...</option>
                                     <option value="Moyen">Moyen</option>
                                     <option value="Assez bien">Assez bien</option>
                                     <option value="Tres bien">Tres bien</option>
