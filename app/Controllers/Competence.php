@@ -16,17 +16,16 @@ class Competence extends BaseController
 
 	public function add_skills()
 	{
-		$data = array(
-			'idCv' => $resume,
-			'idCompetence' => $skill
-		);
-		
-		helper(['form', 'url']);
+
+		helper('form', 'url');
 
 		if ($this->request->getMethod() == 'post') {
 			$skill = $this->request->getVar('skill');
 			$resume = (new CvModel())->user_cv(session('id'));
-			
+			$data = array(
+				'idCv' => $resume,
+				'idCompetence' => $skill
+			);
 			// $comp = $this->model->get_competence_cv($data);
 			$rules = [
 				'skill' => 'required'
@@ -34,10 +33,9 @@ class Competence extends BaseController
 			if ($this->validate($rules)) {
 
 				$this->model->add_skills($data);
-			} 
-			else {
+				echo json_encode(array("status" => true, "message" => "success"));
+			} else {
 				$data['validation'] = $this->validator;
-				echo json_encode($data);
 			}
 		}
 	}

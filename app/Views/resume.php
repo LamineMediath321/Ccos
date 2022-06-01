@@ -497,7 +497,7 @@
                             <div class="form-group">
                                 <label for="skill">Compétences</label>
                                 <select name="skill" class="select2 form-control custom-select selectpicker" data-style="btn-success" data-container="select_contain" id="skill" >
-                                    <option value=''>Choisissez...</option>
+                                    <option value="">Choisissez...</option>
 
                                     <?Php foreach ($skills as $skill) :  ?>
                                         <option value="<?= $skill['idCompetence']  ?>"><?= $skill['intitule']  ?></option>
