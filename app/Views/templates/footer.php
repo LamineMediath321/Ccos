@@ -533,8 +533,13 @@
 
     });
 
+
     ////// FIN===================================
 </script>
+
+
+
+
 <script type="text/javascript">
     /*  =========================================================== 
                             Sommaire
@@ -968,7 +973,7 @@
                 location.reload(); // for reload a page
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                console.log(data);
+                console.log(errorThrown);
             }
         });
     }
@@ -1493,7 +1498,6 @@
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR);
-                alert('dssd');
 
             }
         });

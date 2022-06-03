@@ -43,6 +43,7 @@ class Experience extends BaseController
 
         if ($this->validate($rules)) {
             $this->model->add($data);
+            echo json_encode(array("status" => TRUE, "message" => "Experience ajoutee"));
         } else {
             echo_json($data);
         }

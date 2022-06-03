@@ -492,7 +492,7 @@ CREATE TABLE `etudiant` (
 
 LOCK TABLES `etudiant` WRITE;
 /*!40000 ALTER TABLE `etudiant` DISABLE KEYS */;
-INSERT INTO `etudiant` VALUES (2,2,3,'ndiaye','fatou','F','1998-12-31','77 000 00 00','fatou@gmail.com',NULL,'Senegalaise','Mbour','1635294216_f068dd6d4ef553c08480.png','Ngallele',NULL,NULL),(3,3,8,'FAYE','Ndeye Sohna','F','2021-10-31','77 000 00 00','sohna@gmail.com',NULL,'Senegalaise','PIkine','1635644364_488d379005661bf00b8e.png','Pikine',NULL,NULL);
+INSERT INTO `etudiant` VALUES (2,2,3,'ndiaye','fatou','F','1998-12-31','77 000 00 00','fatou@gmail.com',NULL,'Sénégalaise','Mbour','1635294216_f068dd6d4ef553c08480.png','Ngallele',NULL,NULL),(3,3,8,'FAYE','Ndeye Sohna','F','2021-10-31','77 000 00 00','sohna@gmail.com',NULL,'Senegalaise','PIkine','1635644364_488d379005661bf00b8e.png','Pikine',NULL,NULL);
 /*!40000 ALTER TABLE `etudiant` ENABLE KEYS */;
 UNLOCK TABLES;
 

@@ -3,6 +3,7 @@
 
 <head>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="<?php echo base_url('assets/img/icon.png'); ?>" />
 
     <!-- Required meta tags -->
@@ -28,23 +29,21 @@
 
 
     <div class="d-lg-flex half">
-        <div class="bg order-1 order-md-2" style="background-image: url('<?php echo base_url('assets/images/ugb.jpg'); ?>"></div>
-        <div class="contents order-2 order-md-1">
+        <div data-aos="fade-up-left" class="bg order-1 order-md-2" style="background-image: url('<?php echo base_url('assets/images/ugb_inscription_2.png'); ?>"></div>
+        <div class="contents order-2 order-md-1" data-aos="zoom-in-up">
 
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-7">
-                        <img class="rounded mx-auto d-block" src="<?php echo base_url('assets/img/Footer.png'); ?>" alt="" width="60%">
-
                         <h1 class="mb-5" style="color: #3b5998;">Connexion</h1>
 
-                        <h3 class="mb-4">Plateforme <span> d'Opportunit&eacute;s</span></h3>
+                        <h3 data-aos="fade-up" class="mb-4">Plateforme <span> d'Opportunit&eacute;s</span></h3>
                         <form action="<?php echo base_url(); ?>/user/login" method="post" id="loginForm">
-                            <div class="form-group first">
+                            <div class="form-group first" data-aos="fade-up-left">
                                 <label class="control-label" for="username">Login</label>
                                 <input type="email" name="email" class="form-control" placeholder="login@example.com">
                             </div>
-                            <div class="form-group last mb-3">
+                            <div class="form-group last mb-3" data-aos="fade-up-right">
                                 <label class="control-label" for="password">Mot de passe</label>
                                 <input type="password" name="password" class="form-control" placeholder="Mot de passe">
                             </div>
@@ -110,6 +109,11 @@
 
             });
         });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
     </script>
 </body>
 

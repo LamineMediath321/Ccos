@@ -3,6 +3,7 @@
 <!-- index35:56-->
 
 <head>
+
     <link rel="shortcut icon" type="image/png" href="<?php echo base_url('assets/img/icon.png'); ?>" />
 
     <!-- Basic Page Needs==================================================-->
@@ -10,6 +11,7 @@
     <meta charset="utf-8" content-type="text/html">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- CSS==================================================-->
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/aos.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/plugins/css/plugins.css'); ?>">
     <link href="<?php echo base_url('assets/css/style.css'); ?>" rel="stylesheet">
     <link type="text/css" rel="stylesheet" id="jssDefault" href="<?php echo base_url('assets/css/colors/green-style.css'); ?>">

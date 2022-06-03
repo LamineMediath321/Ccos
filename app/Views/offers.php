@@ -1,3 +1,4 @@
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <section class="inner-header-title" style="background-image:url(<?php echo base_url('assets/img/bg.jpg'); ?>)">
     <div class="container">
         <h6></h6>
@@ -50,7 +51,7 @@
             <div class="mt-10">
                 <?php if ($offres) { ?>
                     <?php foreach ($offres as $offer) : ?>
-                        <div class="item-click">
+                        <div class="item-click" data-aos="fade-right">
                             <article>
                                 <div class="brows-job-list">
                                     <div class="col-md-1 col-sm-2 small-padding">
@@ -225,3 +226,8 @@
         </div>
     </div>
 </div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
