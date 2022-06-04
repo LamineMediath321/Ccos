@@ -1,3 +1,4 @@
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <!-- Title Header Start -->
 <section class="inner-header-title" style="background-image:url(<?php echo base_url('assets/img/bg.jpg'); ?>)">
     <?php if (session('Resume404')) : ?>
@@ -12,7 +13,7 @@
     endif;
         ?>
         <h2></h2>
-        </div> 
+        </div>
 </section>
 
 <div class="clearfix"></div>
@@ -87,8 +88,8 @@
                         <li class="nav-item"><a class="nav-link" href="#activities">Activit&eacute;s</a></li>
                         <li><a href="#messages">Messages <span class="info-bar">6</span></a></li>
                         <li><a href="#settings">Settings</a></li -->
-                        
-                    
+
+
                     <ul class="nav nav-pills" id="simple-design-tab">
                         <li class="active"><a data-toggle="pill" href="#offers">Offres</a></li>
                         <li><a data-toggle="pill" href="#candidacies">Candidatures</a></li>
@@ -96,14 +97,14 @@
                     </ul>
                     <!-- Start All Sec -->
                     <div class="tab-content">
-                        
-                             
+
+
                         <!-- Start Job List -->
                         <div id="offers" class="tab-pane fade in active">
                             <div class="row">
                                 <?php foreach ($offers as $offer) { ?>
                                     <div class="item-click">
-                                        <article>
+                                        <article data-aos="fade-right">
                                             <div class="row brows-job-list">
                                                 <div class="col-md-1 col-sm-2 small-padding">
                                                     <div class="brows-job-company-img">
@@ -145,7 +146,7 @@
                                     </div>
                                 <?php } ?>
                             </div>
-                            
+
                         </div>
                         <!-- End Offer List -->
 
@@ -216,7 +217,7 @@
             </div>
             <form method="post" action="javascript:void(0)" id="student_form" enctype="multipart/form-data" class="">
                 <div class="modal-body form">
-                <!-- <div class="row ">
+                    <!-- <div class="row ">
                         <div class=" col-12 align-center">
                             <div class="form-group">
                                 <div class="alert alert-danger" role="alert" id="alert" style="display:none">
@@ -260,7 +261,7 @@
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
                                 <label for="profile">Profil</label>
-                                <select name="profiles[]" multiple class="select2 form-control custom-select selectpicker" data-style="btn-success" data-container="select_contain" id="profile" >
+                                <select name="profiles[]" multiple class="select2 form-control custom-select selectpicker" data-style="btn-success" data-container="select_contain" id="profile">
                                     <option>Choisissez...</option>
                                     <?Php foreach ($profiles as $profile) :  ?>
                                         <option value="<?php echo $profile['idProfil']  ?>"><?php echo $profile['intitule']  ?></option>
@@ -296,17 +297,17 @@
                                 <input type="text" class="form-control" name="natnalty" id="natnalty" value="">
                             </div>
                         </div>
-                        <!-- <div class="col-xs-9 col-sm-12">
+                        <div class="col-xs-9 col-sm-12">
                             <div class="form-group ">
                                 <label class="bmd-label-floating" for="description">Description</label>
                                 <textarea class="form-control textarea" name="description" id="description" minlength="10" maxlength="1300" rows="4" placeholder=""> </textarea>
 
                             </div>
-                        </div> -->
+                        </div>
                         <div class="col-xs-9 col-sm-6">
                             <div class="form-group">
                                 <label for="pict"><img src="" width="130" height="130" id="pict" alt=""></label>
-                                <input type="file" name="pict" class="form-control" id="pic"  accept="image/*">
+                                <input type="file" name="pict" class="form-control" id="pic" accept="image/*">
                             </div>
 
                         </div>
@@ -316,14 +317,14 @@
                     <div class="modal-footer">
                         <input type="hidden" name="idE" class="form-control" id="idE">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                         
 
-                       
 
-                       <button type="submit" id="btn_save"  onclick="save_cv()" class="btn btn-primary">Enregistrer</button>
-                 
 
-                 </div>
+
+                        <button type="submit" id="btn_save" onclick="save_cv()" class="btn btn-primary">Enregistrer</button>
+
+
+                    </div>
                 </div>
             </form>
         </div>
@@ -331,9 +332,14 @@
 </div>
 </div>
 <style>
-    .form-group{
-        width:85%;
-        padding-left:3.5em;
+    .form-group {
+        width: 85%;
+        padding-left: 3.5em;
     }
-    
 </style>
+
+</style>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>

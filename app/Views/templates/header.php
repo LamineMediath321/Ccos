@@ -4,6 +4,7 @@
 
 <head>
 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" type="image/png" href="<?php echo base_url('assets/img/icon.png'); ?>" />
 
     <!-- Basic Page Needs==================================================-->
