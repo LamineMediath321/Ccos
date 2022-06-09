@@ -87,12 +87,15 @@ class Entreprise extends BaseController
 	{
 		$data = $this->getCompanyFormData();
 		$data['partenaire'] = $this->request->getVar('partner');
-
 		$secteurs = $this->request->getVar('secteur');
-		if ($this->model->add_ent($data, $secteurs)) {
-			echo json_encode($data);
-		} else {
-			echo json_encode($data);
+		if ($this->request->getMethod() == 'post') {
+			$rules = [];
+			if ($this->validate($rules)) {
+				$this->model->add_ent($data, $secteurs);
+				echo json_encode($data);
+			} else {
+				$data['validation'] = $this->validator;
+			}
 		}
 	}
 

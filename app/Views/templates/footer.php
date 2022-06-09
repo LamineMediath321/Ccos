@@ -973,7 +973,7 @@
                 location.reload(); // for reload a page
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                console.log(errorThrown);
+                console.log(errorThrown); // for reload a page
             }
         });
     }

@@ -2,81 +2,79 @@
 <html lang="en">
 
 <head>
-
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="<?php echo base_url('assets/img/icon.png'); ?>" />
-
-    <!-- Required meta tags -->
+    <title>Plateforme Opportunit&eacute;s|login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="<?php echo base_url('fonts/icomoon/style.css') ?>">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="<?php echo base_url('css/owl.carousel.min.css') ?>">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?php echo base_url('css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Style -->
-    <link rel="stylesheet" href="<?php echo base_url('css/login.css') ?>">
+    <link rel="shortcut icon" type="image/png" href="<?php echo base_url('assets/img/icon.png'); ?>" />
 
-    <title>Plateforme Opportunit&eacute;s|login</title>
+    <link rel="stylesheet" href="<?php echo base_url('css/login-form/style.css') ?>">
+
 </head>
 
-<body>
-
-
-
-    <div class="d-lg-flex half">
-        <div data-aos="fade-up-left" class="bg order-1 order-md-2" style="background-image: url('<?php echo base_url('assets/images/ugb_inscription_2.png'); ?>"></div>
-        <div class="contents order-2 order-md-1" data-aos="zoom-in-up">
-
-            <div class="container">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-md-7">
-                        <h1 class="mb-5" style="color: #3b5998;">Connexion</h1>
-
-                        <h3 data-aos="fade-up" class="mb-4">Plateforme <span> d'Opportunit&eacute;s</span></h3>
-                        <form action="<?php echo base_url(); ?>/user/login" method="post" id="loginForm">
-                            <div class="form-group first" data-aos="fade-up-left">
-                                <label class="control-label" for="username">Login</label>
-                                <input type="email" name="email" class="form-control" placeholder="login@example.com">
+<body class="img js-fullheight" style="background-image: url(<?php echo base_url('assets/images/ugb-register.jpg'); ?>);">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 data-aos="fade-up" class="heading-section">La plateforme d'opportunité</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        <h3 class="mb-4 text-center">Connexion</h3>
+                        <form action="<?php echo base_url(); ?>/user/login" class="signin-form" method="post" id="loginForm">
+                            <div class="form-group" data-aos="fade-up-right">
+                                <input type="email" class="form-control" placeholder="login@example.com" name="email">
                             </div>
-                            <div class="form-group last mb-3" data-aos="fade-up-right">
-                                <label class="control-label" for="password">Mot de passe</label>
-                                <input type="password" name="password" class="form-control" placeholder="Mot de passe">
+                            <div class="form-group" data-aos="fade-up-left">
+                                <input id="password-field" type="password" class="form-control" placeholder="Password" name="password">
+                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
+                            <div class="form-group" data-aos="fade-down">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Se connecter</button>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-50">
+                                    <label class="checkbox-wrap checkbox-primary">Remember Me
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="w-50 text-md-right">
+                                    <a href="#" style="color: #fff">Mot de passe oublié ?</a>
+                                </div>
+                            </div>
+                        </form>
 
-                            <!--Les erreurs-->
-                            <?php if (isset($validation)) : ?>
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <div class="alert alert-danger" role="alert">
-                                            <?= $validation->listErrors() ?>
-                                        </div>
+                        <!--Les erreurs-->
+                        <?php if (isset($validation)) : ?>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="alert alert-danger" role="alert">
+                                        <?= $validation->listErrors() ?>
                                     </div>
                                 </div>
-                            <?php endif; ?>
-                            <!--end-->
-
-                            <div class="d-flex mb-5 align-items-center">
-                                <a href="<?php echo base_url(); ?>/register" style="text-decoration:none; ">Pas encore un compte ?</a>
-                                <a href="#" class="ml-auto forgot-pass" style="text-decoration:none; ">Mot de passe oublié ?</a>
                             </div>
+                        <?php endif; ?>
+                        <!--end-->
 
-                            <input type="submit" value="Se connecter" class="btn btn-block btn-primary">
-
-                        </form>
+                        <p class="w-100 text-center">&mdash; Ou &mdash;</p>
+                        <div class="social d-flex text-center">
+                            <a href="<?php echo base_url(); ?>/register" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Créer un compte</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-    </div>
-
-
+    </section>
 
     <script src="<?php echo base_url('js/jquery-3.3.1.min.js') ?>"></script>
     <script src="<?php echo base_url('js/jquery.validate.js') ?>"></script>
@@ -115,6 +113,7 @@
     <script>
         AOS.init();
     </script>
+
 </body>
 
 </html>
